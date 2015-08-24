@@ -19,8 +19,8 @@ var _decoratorsWaitFor = require('./decorators/waitFor');
 
 exports.waitFor = _decoratorsWaitFor.waitFor;
 
-function configure(aurelia, configCallback) {
+function configure(config, cb) {
     _lifecycleManager.LifecycleManager.interceptClassActivator();
     _lifecycleManager.LifecycleManager.interceptHtmlBehaviorResource();
-    _router.RouterManager.AddFluxPipelineStep(aurelia);
+    _router.RouterManager.AddFluxPipelineStep(config);
 }

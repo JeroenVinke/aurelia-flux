@@ -5,10 +5,10 @@ System.register(['./lifecycle-manager', './router', './instance-dispatcher', './
 
     _export('configure', configure);
 
-    function configure(aurelia, configCallback) {
+    function configure(config, cb) {
         LifecycleManager.interceptClassActivator();
         LifecycleManager.interceptHtmlBehaviorResource();
-        RouterManager.AddFluxPipelineStep(aurelia);
+        RouterManager.AddFluxPipelineStep(config);
     }
 
     return {

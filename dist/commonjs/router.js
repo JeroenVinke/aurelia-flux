@@ -13,11 +13,11 @@ var RouterManager = (function () {
     _classCallCheck(this, RouterManager);
   }
 
-  RouterManager.AddFluxPipelineStep = function AddFluxPipelineStep(aurelia) {
-    var router = aurelia.container.get(_aureliaRouter.Router);
+  RouterManager.AddFluxPipelineStep = function AddFluxPipelineStep(config) {
+    var router = config.container.get(_aureliaRouter.Router);
     var configuration = new _aureliaRouter.RouterConfiguration();
 
-    configuration.addPipelineStep('modelbind', FluxLifeCycleStep);
+    configuration.addPipelineStep("modelbind", FluxLifeCycleStep);
     router.configure(configuration);
   };
 

@@ -7,9 +7,9 @@ define(['exports', './lifecycle-manager', './router', './instance-dispatcher', '
     exports.handle = _decoratorsHandle.handle;
     exports.waitFor = _decoratorsWaitFor.waitFor;
 
-    function configure(aurelia, configCallback) {
+    function configure(config, cb) {
         _lifecycleManager.LifecycleManager.interceptClassActivator();
         _lifecycleManager.LifecycleManager.interceptHtmlBehaviorResource();
-        _router.RouterManager.AddFluxPipelineStep(aurelia);
+        _router.RouterManager.AddFluxPipelineStep(config);
     }
 });

@@ -18,11 +18,11 @@ System.register(['aurelia-router', './flux-dispatcher'], function (_export) {
           _classCallCheck(this, RouterManager);
         }
 
-        RouterManager.AddFluxPipelineStep = function AddFluxPipelineStep(aurelia) {
-          var router = aurelia.container.get(Router);
+        RouterManager.AddFluxPipelineStep = function AddFluxPipelineStep(config) {
+          var router = config.container.get(Router);
           var configuration = new RouterConfiguration();
 
-          configuration.addPipelineStep('modelbind', FluxLifeCycleStep);
+          configuration.addPipelineStep("modelbind", FluxLifeCycleStep);
           router.configure(configuration);
         };
 

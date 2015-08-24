@@ -9,8 +9,8 @@ export {waitFor} from './decorators/waitFor';
 import {LifecycleManager} from './lifecycle-manager';
 import {RouterManager} from './router';
 
-export function configure(aurelia, configCallback) {
+export function configure(config, cb) {
     LifecycleManager.interceptClassActivator();
     LifecycleManager.interceptHtmlBehaviorResource();
-    RouterManager.AddFluxPipelineStep(aurelia);
+    RouterManager.AddFluxPipelineStep(config);
 }
